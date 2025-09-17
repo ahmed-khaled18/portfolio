@@ -2,15 +2,80 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.1.
 
-## Development server
+## 🚀 Live Demo
+
+Visit the live portfolio at: [https://ahmed-khaled18.github.io/portfolio/](https://ahmed-khaled18.github.io/portfolio/)
+
+## 🛠️ Tech Stack
+
+- **Angular 20** - Frontend framework
+- **TypeScript** - Programming language
+- **SCSS** - Styling
+- **ESLint & Prettier** - Code quality and formatting
+- **Husky & lint-staged** - Git hooks for code quality
+- **GitHub Actions** - CI/CD pipeline
+- **GitHub Pages** - Static site hosting
+
+## 📦 Development
+
+## 📦 Development
+
+### Development server
 
 To start a local development server, run:
 
 ```bash
-ng serve
+npm start
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+
+### Available Scripts
+
+- `npm start` - Start development server
+- `npm run build` - Build for development
+- `npm run build:prod` - Build for production
+- `npm run build:github-pages` - Build for GitHub Pages deployment
+- `npm run test` - Run unit tests
+- `npm run lint` - Run ESLint
+- `npm run lint:fix` - Run ESLint with auto-fix
+- `npm run format` - Format code with Prettier
+- `npm run format:check` - Check code formatting
+
+## 🚀 Deployment
+
+This project is automatically deployed to GitHub Pages using GitHub Actions. Every push to the `main` branch triggers:
+
+1. **Code Quality Checks**: ESLint and Prettier validation
+2. **Testing**: Unit tests execution
+3. **Build**: Production build with GitHub Pages configuration
+4. **Deploy**: Automatic deployment to GitHub Pages
+
+### Manual Deployment
+
+To manually deploy to GitHub Pages:
+
+```bash
+npm run build:github-pages
+```
+
+## 🔧 Code Quality
+
+This project includes comprehensive code quality tools:
+
+- **ESLint**: TypeScript and Angular-specific linting rules
+- **Prettier**: Code formatting
+- **Husky**: Git hooks for pre-commit validation
+- **lint-staged**: Run linters on staged files only
+- **Commitlint**: Conventional commit message validation
+
+### Git Hooks
+
+Pre-commit hooks automatically:
+
+- Run ESLint with auto-fix
+- Format code with Prettier
+- Validate commit messages
 
 ## Code scaffolding
 
