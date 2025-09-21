@@ -1,0 +1,160 @@
+/* Portfolio Theme Configuration */
+/* Color palette from Color Hunt */
+
+:root {
+  /* Primary Color Palette - Dark Purple Gradient */
+  --color-primary-darkest: #030637; /* Deep navy purple */
+  --color-primary-dark: #3c0753; /* Rich purple */
+  --color-primary-medium: #720455; /* Vibrant purple */
+  --color-primary-light: #910a67; /* Bright magenta */
+
+  /* Semantic Color Assignments */
+  --color-background: var(--color-primary-darkest);
+  --color-surface: var(--color-primary-dark);
+  --color-accent: var(--color-primary-medium);
+  --color-highlight: var(--color-primary-light);
+
+  /* Text Colors */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: rgba(255, 255, 255, 0.7);
+  --color-text-muted: rgba(255, 255, 255, 0.5);
+  --color-text-accent: var(--color-primary-light);
+
+  /* Interactive States */
+  --color-hover: rgba(145, 10, 103, 0.1);
+  --color-active: rgba(145, 10, 103, 0.2);
+  --color-focus: rgba(145, 10, 103, 0.3);
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(
+    135deg,
+    var(--color-primary-darkest) 0%,
+    var(--color-primary-dark) 50%,
+    var(--color-primary-medium) 100%
+  );
+  --gradient-accent: linear-gradient(
+    135deg,
+    var(--color-primary-medium) 0%,
+    var(--color-primary-light) 100%
+  );
+  --gradient-overlay: linear-gradient(
+    135deg,
+    rgba(3, 6, 55, 0.9) 0%,
+    rgba(114, 4, 85, 0.1) 100%
+  );
+
+  /* Component Colors */
+  --color-card-background: rgba(60, 7, 83, 0.3);
+  --color-card-border: rgba(114, 4, 85, 0.2);
+  --color-button-primary: var(--color-primary-light);
+  --color-button-secondary: var(--color-primary-medium);
+
+  /* Status Colors (maintaining brand harmony) */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: var(--color-primary-light);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(3, 6, 55, 0.05);
+  --shadow-md:
+    0 4px 6px -1px rgba(3, 6, 55, 0.1), 0 2px 4px -1px rgba(3, 6, 55, 0.06);
+  --shadow-lg:
+    0 10px 15px -3px rgba(3, 6, 55, 0.1), 0 4px 6px -2px rgba(3, 6, 55, 0.05);
+  --shadow-xl:
+    0 20px 25px -5px rgba(3, 6, 55, 0.1), 0 10px 10px -5px rgba(3, 6, 55, 0.04);
+  --shadow-glow: 0 0 20px rgba(145, 10, 103, 0.3);
+
+  /* Spacing Scale */
+  --space-xs: 0.25rem; /* 4px */
+  --space-sm: 0.5rem; /* 8px */
+  --space-md: 1rem; /* 16px */
+  --space-lg: 1.5rem; /* 24px */
+  --space-xl: 2rem; /* 32px */
+  --space-2xl: 3rem; /* 48px */
+  --space-3xl: 4rem; /* 64px */
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  /* Typography Scale */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 1.875rem; /* 30px */
+  --font-size-4xl: 2.25rem; /* 36px */
+  --font-size-5xl: 3rem; /* 48px */
+  --font-size-6xl: 3.75rem; /* 60px */
+
+  /* Animation */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+
+  /* Breakpoints (for reference) */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+/* Theme Utility Classes */
+.theme-background {
+  background-color: var(--color-background);
+}
+
+.theme-surface {
+  background-color: var(--color-surface);
+}
+
+.theme-gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.theme-gradient-accent {
+  background: var(--gradient-accent);
+}
+
+.theme-text-primary {
+  color: var(--color-text-primary);
+}
+
+.theme-text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.theme-text-accent {
+  color: var(--color-text-accent);
+}
+
+.theme-glow {
+  box-shadow: var(--shadow-glow);
+}
+
+/* Interactive States */
+.theme-interactive {
+  transition: all var(--transition-normal);
+}
+
+.theme-interactive:hover {
+  background-color: var(--color-hover);
+  transform: translateY(-2px);
+}
+
+.theme-interactive:active {
+  background-color: var(--color-active);
+  transform: translateY(0);
+}
+
+.theme-interactive:focus {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
