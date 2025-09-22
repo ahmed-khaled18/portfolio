@@ -1,0 +1,94 @@
+<nav class="navbar fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <!-- Brand Name -->
+      <a [routerLink]="'/'" class="brand-link transition-colors duration-300">
+        <span class="brand-name font-calligraphic text-2xl md:text-3xl font-bold">Ahmed Khaled</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        <nav class="flex space-x-8">
+          @for (item of navigationItems; track item.route) {
+            <a
+              [routerLink]="item.route"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="nav-link px-3 py-2 text-sm font-medium transition-colors duration-300 relative group"
+            >
+              {{ item.label }}
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+          }
+        </nav>
+
+        <!-- CTA Button -->
+        <a
+          [href]="ctaButton.href"
+          [target]="ctaButton.target"
+          class="cta-button px-6 py-2 rounded-lg font-medium text-sm transition-all duration-300 hover:-translate-y-0.5"
+        >
+          {{ ctaButton.label }}
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button
+        class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none"
+        [class.active]="isMobileMenuOpen()"
+        (click)="toggleMobileMenu()"
+        aria-label="Toggle mobile menu"
+      >
+        <span
+          class="block w-6 h-0.5 bg-gray-300 transition-all duration-300"
+          [class.rotate-45]="isMobileMenuOpen()"
+          [class.translate-y-2]="isMobileMenuOpen()"
+        ></span>
+        <span
+          class="block w-6 h-0.5 bg-gray-300 transition-all duration-300"
+          [class.opacity-0]="isMobileMenuOpen()"
+        ></span>
+        <span
+          class="block w-6 h-0.5 bg-gray-300 transition-all duration-300"
+          [class.-rotate-45]="isMobileMenuOpen()"
+          [class.-translate-y-2]="isMobileMenuOpen()"
+        ></span>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div
+      class="md:hidden transition-all duration-300 ease-in-out overflow-hidden"
+      [class.max-h-96]="isMobileMenuOpen()"
+      [class.opacity-100]="isMobileMenuOpen()"
+      [class.max-h-0]="!isMobileMenuOpen()"
+      [class.opacity-0]="!isMobileMenuOpen()"
+    >
+      <div class="mobile-menu px-2 pt-2 pb-3 space-y-1">
+        @for (item of navigationItems; track item.route) {
+          <a
+            [routerLink]="item.route"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="mobile-nav-link block px-3 py-3 rounded-md font-medium transition-colors duration-300"
+            (click)="closeMobileMenu()"
+          >
+            {{ item.label }}
+          </a>
+        }
+
+        <!-- Mobile CTA Button -->
+        <div class="pt-4 pb-2">
+          <a
+            [href]="ctaButton.href"
+            [target]="ctaButton.target"
+            class="cta-button block w-full text-center px-6 py-3 rounded-lg font-medium transition-all duration-300"
+            (click)="closeMobileMenu()"
+          >
+            {{ ctaButton.label }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

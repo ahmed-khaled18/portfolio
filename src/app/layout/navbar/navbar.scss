@@ -1,0 +1,106 @@
+// Navbar styling using CSS custom properties
+.navbar {
+  background: rgba(60, 7, 83, 0.95); /* fallback */
+  background: color-mix(in srgb, var(--color-surface) 95%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-card-border);
+  box-shadow: var(--shadow-md);
+
+  &.scrolled {
+    background: color-mix(in srgb, var(--color-surface) 98%, transparent);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+// Brand name styling
+.brand-link {
+  color: var(--color-text-primary);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-primary-light);
+  }
+}
+
+.brand-name {
+  color: var(--color-primary-light);
+  font-family: var(--font-calligraphic);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 10px rgba(145, 10, 103, 0.5);
+  }
+}
+
+// Navigation links
+.nav-link {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-primary-light);
+  }
+
+  span {
+    background-color: var(--color-primary-light);
+  }
+
+  &.active {
+    color: var(--color-primary-light);
+
+    span {
+      width: 100%;
+    }
+  }
+}
+
+// CTA Button
+.cta-button {
+  background-color: var(--color-button-primary);
+  color: var(--color-text-primary);
+  text-decoration: none;
+
+  &:hover {
+    background-color: var(--color-button-secondary);
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+// Mobile navigation menu
+.mobile-menu {
+  background: color-mix(in srgb, var(--color-surface) 95%, transparent);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--color-card-border);
+}
+
+.mobile-nav-link {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-primary-light);
+    background-color: var(--color-hover);
+  }
+
+  &.active {
+    color: var(--color-primary-light);
+    background-color: var(--color-active);
+  }
+}
+
+// Smooth scroll behavior for anchor navigation
+html {
+  scroll-behavior: smooth;
+}
+
+// Custom hamburger animation for precise positioning
+.navbar-toggle.active {
+  span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+}

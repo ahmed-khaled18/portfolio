@@ -9,6 +9,7 @@
   --font-inter-tight:
     'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-calligraphic: 'Dancing Script', 'Brush Script MT', cursive, serif;
 }
 
 /* Base font configuration */
@@ -28,6 +29,10 @@ body {
 
 .font-inter-tight {
   font-family: var(--font-inter-tight);
+}
+
+.font-calligraphic {
+  font-family: var(--font-calligraphic);
 }
 
 /* Display text optimization */

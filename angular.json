@@ -7,7 +7,18 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "changeDetection": "OnPush",
+          "skipTests": false
+        },
+        "@schematics/angular:service": {
+          "skipTests": false
+        },
+        "@schematics/angular:directive": {
+          "skipTests": false
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": false
         }
       },
       "root": "",
@@ -24,6 +35,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "assets"
               }
             ],
             "styles": ["src/styles.scss"]
@@ -92,6 +108,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "assets"
               }
             ],
             "styles": ["src/styles.scss"]
