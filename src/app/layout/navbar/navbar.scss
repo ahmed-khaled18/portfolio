@@ -1,106 +1,97 @@
-// Navbar styling using CSS custom properties
-.navbar {
-  background: rgba(60, 7, 83, 0.95); /* fallback */
-  background: color-mix(in srgb, var(--color-surface) 95%, transparent);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--color-card-border);
-  box-shadow: var(--shadow-md);
-
-  &.scrolled {
-    background: color-mix(in srgb, var(--color-surface) 98%, transparent);
-    box-shadow: var(--shadow-lg);
-  }
-}
-
-// Brand name styling
-.brand-link {
-  color: var(--color-text-primary);
-  text-decoration: none;
-
-  &:hover {
-    color: var(--color-primary-light);
-  }
-}
-
+// Brand Name Styling with Google Font
 .brand-name {
-  color: var(--color-primary-light);
-  font-family: var(--font-calligraphic);
+  letter-spacing: 0.05em;
+  color: #ffffff;
   transition: all 0.3s ease;
 
   &:hover {
-    transform: scale(1.05);
-    text-shadow: 0 0 10px rgba(145, 10, 103, 0.5);
+    color: var(--bs-primary);
+    text-shadow: 0 0 10px rgba(var(--bs-primary-rgb), 0.3);
   }
 }
 
-// Navigation links
-.nav-link {
-  color: var(--color-text-secondary);
-  text-decoration: none;
+.navbar {
+  backdrop-filter: blur(15px);
 
-  &:hover {
-    color: var(--color-primary-light);
-  }
-
-  span {
-    background-color: var(--color-primary-light);
-  }
-
-  &.active {
-    color: var(--color-primary-light);
-
-    span {
-      width: 100%;
+  .navbar-toggler {
+    &:focus {
+      box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
     }
   }
 }
 
-// CTA Button
-.cta-button {
-  background-color: var(--color-button-primary);
-  color: var(--color-text-primary);
-  text-decoration: none;
+// Smooth transitions for nav links with underline effect
+.nav-link {
+  transition: all 0.3s ease;
+  position: relative;
 
-  &:hover {
-    background-color: var(--color-button-secondary);
-    box-shadow: var(--shadow-glow);
+  &:not(.active):hover {
+    color: var(--bs-primary) !important;
   }
 }
 
-// Mobile navigation menu
-.mobile-menu {
-  background: color-mix(in srgb, var(--color-surface) 95%, transparent);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid var(--color-card-border);
-}
+// Underline hover effect for nav links
+.nav-underline {
+  position: relative;
 
-.mobile-nav-link {
-  color: var(--color-text-secondary);
-  text-decoration: none;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--bs-primary);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
 
-  &:hover {
-    color: var(--color-primary-light);
-    background-color: var(--color-hover);
+  &:hover::after {
+    width: 80%;
   }
 
   &.active {
-    color: var(--color-primary-light);
-    background-color: var(--color-active);
+    color: var(--bs-primary) !important;
+
+    &::after {
+      width: 80%;
+    }
   }
 }
 
-// Smooth scroll behavior for anchor navigation
-html {
-  scroll-behavior: smooth;
-}
+// Enhanced button hover effects
+.btn {
+  transition: all 0.3s ease;
 
-// Custom hamburger animation for precise positioning
-.navbar-toggle.active {
-  span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
+  &:hover {
+    transform: translateY(-2px);
   }
 
-  span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
+  &.btn-outline-light:hover {
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+  }
+
+  &.btn-primary:hover {
+    box-shadow: 0 4px 15px rgba(var(--bs-primary-rgb), 0.4);
+  }
+}
+
+// Offcanvas enhancements
+.offcanvas {
+  .nav-link:hover {
+    transform: translateX(5px);
+  }
+}
+
+// Backdrop styling
+.offcanvas-backdrop {
+  transition: opacity 0.15s linear;
+  cursor: pointer;
+}
+
+// Responsive adjustments
+@media (max-width: 991.98px) {
+  .brand-name {
+    font-size: 1.5rem !important;
   }
 }

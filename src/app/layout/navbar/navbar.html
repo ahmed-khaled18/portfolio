@@ -1,1 +1,103 @@
-<p>Navbar works!</p>
+<!-- Bootstrap Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+  <div class="container">
+    <!-- Brand Name -->
+    <a class="navbar-brand font-dancing fw-bold fs-3 brand-name" routerLink="/home">Ahmed Khaled</a>
+
+    <!-- Mobile Menu Button -->
+    <button
+      class="navbar-toggler border-0"
+      type="button"
+      (click)="toggleOffcanvas()"
+      [attr.aria-expanded]="isOffcanvasOpen()"
+      aria-controls="offcanvasNavbar"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Desktop Navigation -->
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto me-3">
+        @for (item of config.navigationItems; track item.route) {
+          <li class="nav-item">
+            <a
+              class="nav-link fw-medium px-3 py-2 mx-1 nav-underline"
+              [routerLink]="item.route"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: item.route === '/home' }"
+            >
+              {{ item.label }}
+            </a>
+          </li>
+        }
+      </ul>
+      <!-- Desktop CTA Button -->
+      <a
+        [href]="config.ctaButton.href"
+        [target]="config.ctaButton.target"
+        class="btn btn-outline-light fw-semibold px-4 py-2 rounded-pill border-2"
+      >
+        <i class="bi bi-download me-2"></i>
+        {{ config.ctaButton.label }}
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Offcanvas for Mobile -->
+<div
+  class="offcanvas offcanvas-end bg-dark text-white"
+  [class.show]="isOffcanvasOpen()"
+  tabindex="-1"
+  id="offcanvasNavbar"
+  aria-labelledby="offcanvasNavbarLabel"
+  [style.visibility]="isOffcanvasOpen() ? 'visible' : 'hidden'"
+>
+  <div class="offcanvas-header border-bottom border-secondary">
+    <h5 class="offcanvas-title text-primary fw-bold fs-4" id="offcanvasNavbarLabel">Menu</h5>
+    <button type="button" class="btn-close btn-close-white" (click)="closeOffcanvas()" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav justify-content-end flex-grow-1">
+      @for (item of config.navigationItems; track item.route) {
+        <li class="nav-item mb-2">
+          <a
+            class="nav-link fw-medium p-3 rounded-3 text-white"
+            [routerLink]="item.route"
+            routerLinkActive="active bg-primary"
+            [routerLinkActiveOptions]="{ exact: item.route === '/home' }"
+            (click)="closeOffcanvas()"
+          >
+            {{ item.label }}
+          </a>
+        </li>
+      }
+    </ul>
+    <!-- Mobile CTA Button -->
+    <div class="mt-4 pt-3 border-top border-secondary">
+      <a
+        [href]="config.ctaButton.href"
+        [target]="config.ctaButton.target"
+        class="btn btn-primary w-100 fw-semibold py-3 rounded-3"
+        (click)="closeOffcanvas()"
+      >
+        <i class="bi bi-download me-2"></i>
+        {{ config.ctaButton.label }}
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Backdrop for offcanvas -->
+@if (isOffcanvasOpen()) {
+  <div
+    class="offcanvas-backdrop fade show"
+    tabindex="0"
+    role="button"
+    aria-label="Close navigation menu"
+    (click)="closeOffcanvas()"
+    (keyup.enter)="closeOffcanvas()"
+    (keyup.escape)="closeOffcanvas()"
+  ></div>
+}

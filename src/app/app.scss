@@ -1,0 +1,16 @@
+// Main App Layout Styles
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: 5rem; // Account for fixed navbar height
+  min-height: calc(100vh - 5rem);
+
+  @media (max-width: 768px) {
+    padding-top: 4rem; // Smaller padding on mobile
+  }
+}
