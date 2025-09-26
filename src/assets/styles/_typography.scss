@@ -1,0 +1,30 @@
+// Font utility classes and typography overrides
+
+// Font family utility classes
+.font-dancing {
+  font-family: 'Dancing Script', cursive;
+}
+
+.font-inter {
+  font-family:
+    'Inter',
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+.font-inter-tight {
+  font-family:
+    'Inter Tight',
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+// Typography overrides for specific elements
+h1.display-1,
+h1.display-2,
+.hero-title {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
+}

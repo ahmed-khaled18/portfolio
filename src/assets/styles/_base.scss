@@ -1,0 +1,47 @@
+// Base styles and CSS reset
+
+// CSS Custom Properties (CSS Variables) - Available globally
+:root {
+  // Color Variables - Custom Theme Palette
+  --color-light: #d9e2f2;
+  --color-white: #ffffff;
+  --color-dark: #1e1d4d;
+  --color-primary: #7b3095;
+  --color-secondary: #dc2776;
+  --color-info: #e6b271;
+  --color-success: #1dad6f;
+  --color-warning: #dfd01b;
+  --color-danger: #ed320d;
+
+  // Color variants with opacity
+  --color-primary-rgb: 123, 48, 149;
+  --color-secondary-rgb: 220, 39, 118;
+  --color-dark-rgb: 30, 29, 77;
+  --color-light-rgb: 217, 226, 242;
+
+  // Font Family Variables
+  --font-family-sans-serif:
+    'Inter', system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Helvetica Neue',
+    'Arial', 'Noto Sans', 'Liberation Sans', sans-serif;
+  --font-family-monospace:
+    'Inter Tight', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas',
+    'Liberation Mono', 'Courier New', monospace;
+  --font-family-cursive: 'Dancing Script', cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100dvh;
+  background: linear-gradient(
+    135deg,
+    var(--color-light) 0%,
+    var(--color-white) 50%,
+    #f8f9fa 100%
+  );
+}

@@ -1,0 +1,40 @@
+// Bootstrap Variable Overrides
+// Color Palette - Custom Theme
+$light: #d9e2f2;
+$white: #ffffff;
+$dark: #1e1d4d;
+$primary: #7b3095;
+$secondary: #dc2776;
+$info: #e6b271;
+$success: #1dad6f;
+$warning: #dfd01b;
+$danger: #ed320d;
+
+// Font Family Overrides
+$font-family-sans-serif: (
+  'Inter',
+  system-ui,
+  -apple-system,
+  'Segoe UI',
+  'Roboto',
+  'Helvetica Neue',
+  'Arial',
+  'Noto Sans',
+  'Liberation Sans',
+  sans-serif,
+  'Apple Color Emoji',
+  'Segoe UI Emoji',
+  'Segoe UI Symbol',
+  'Noto Color Emoji'
+);
+
+$font-family-monospace: (
+  'Inter Tight',
+  'SFMono-Regular',
+  'Menlo',
+  'Monaco',
+  'Consolas',
+  'Liberation Mono',
+  'Courier New',
+  monospace
+);

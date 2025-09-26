@@ -1,0 +1,24 @@
+// Main styles index - Import all style partials
+// This file serves as the central point for importing all style modules
+
+// 1. Bootstrap with custom variables
+@use './bootstrap-variables';
+@use 'bootstrap/scss/bootstrap' with (
+  $light: bootstrap-variables.$light,
+  $white: bootstrap-variables.$white,
+  $dark: bootstrap-variables.$dark,
+  $primary: bootstrap-variables.$primary,
+  $secondary: bootstrap-variables.$secondary,
+  $info: bootstrap-variables.$info,
+  $success: bootstrap-variables.$success,
+  $warning: bootstrap-variables.$warning,
+  $danger: bootstrap-variables.$danger,
+  $font-family-sans-serif: bootstrap-variables.$font-family-sans-serif,
+  $font-family-monospace: bootstrap-variables.$font-family-monospace
+);
+
+// 2. Base styles and reset
+@use './base';
+
+// 3. Typography and font utilities
+@use './typography';
