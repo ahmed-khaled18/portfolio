@@ -1,0 +1,52 @@
+/* ========================================
+   PORTFOLIO THEME SYSTEM
+   ========================================
+   
+   A mathematically derived, modular color system where ALL colors
+   are calculated from just 4 base colors.
+   
+   🎨 HOW TO USE THIS SYSTEM:
+   
+   1. To change the entire theme, modify only the HSL values in '_base-colors.scss'
+   2. Everything else (hover states, shadows, text colors, etc.) will
+      automatically update to maintain harmony and contrast
+   
+   📁 FILE STRUCTURE:
+   
+   ├── _base-colors.scss       → Base palette (ONLY file to modify)
+   ├── _computed-colors.scss   → Primary & semantic colors
+   ├── _interactive-colors.scss → Hover, focus, border states
+   ├── _component-colors.scss  → Cards, buttons, status colors  
+   ├── _gradients-shadows.scss → Visual effects
+   ├── _spacing-sizing.scss    → Layout tokens
+   ├── _utilities.scss         → CSS utility classes
+   └── _components.scss        → Ready-made components
+   
+   🔧 FEATURES:
+   
+   ✓ Mathematically consistent color relationships
+   ✓ Automatic contrast calculations for accessibility
+   ✓ Modern CSS functions (color-mix, calc, hsl)
+   ✓ Modular architecture for maintainability
+   ✓ Complete design system tokens
+   
+   🚀 EXAMPLE: Switch to warm orange theme
+   
+   Just change in _base-colors.scss:
+   --base-1-h: 25;   (orange hue)
+   --base-1-s: 70%;  (higher saturation)
+   --base-1-l: 45%;  (medium lightness)
+   
+   Result: 50+ colors update automatically! 🎉
+   
+   ======================================== */
+
+/* Import all theme modules in dependency order */
+@use 'base-colors'; /* Base palette - modify this to change theme */
+@use 'computed-colors'; /* Derived primary colors */
+@use 'interactive-colors'; /* Hover, focus, active states */
+@use 'component-colors'; /* Component-specific colors */
+@use 'gradients-shadows'; /* Visual effects */
+@use 'spacing-sizing'; /* Layout & typography tokens */
+@use 'utilities'; /* CSS utility classes */
+@use 'components'; /* Pre-built component styles */

@@ -1,0 +1,42 @@
+/* ========================================
+   INTERACTIVE COLORS
+   ========================================
+   
+   Colors for hover, focus, active, and disabled states.
+   All derived from the base palette for consistency.
+   ======================================== */
+
+:root {
+  /* ========================================
+     INTERACTIVE STATES (Derived from base)
+     ======================================== */
+
+  --color-hover: hsla(var(--base-1-h), var(--base-1-s), var(--base-1-l), 0.1);
+  --color-active: hsla(
+    var(--base-1-h),
+    var(--base-1-s),
+    calc(var(--base-1-l) - 5%),
+    0.2
+  );
+  --color-focus: hsla(
+    var(--base-1-h),
+    calc(var(--base-1-s) + 10%),
+    var(--base-1-l),
+    0.4
+  );
+  --color-disabled: hsla(
+    var(--base-3-h),
+    calc(var(--base-3-s) - 10%),
+    var(--base-3-l),
+    0.5
+  );
+
+  /* ========================================
+     BORDER COLORS (Calculated variations)
+     ======================================== */
+
+  --border-light: hsla(var(--base-3-h), var(--base-3-s), var(--base-3-l), 0.4);
+  --border-medium: hsla(var(--base-2-h), var(--base-2-s), var(--base-2-l), 0.6);
+  --border-strong: hsla(var(--base-1-h), var(--base-1-s), var(--base-1-l), 0.8);
+  --border-accent: var(--color-primary-darkest);
+}

@@ -1,0 +1,92 @@
+/* ========================================
+   COMPUTED COLORS
+   ========================================
+   
+   All colors derived from base palette using mathematical functions.
+   These colors maintain harmony and proper relationships.
+   ======================================== */
+
+:root {
+  /* ========================================
+     COMPUTED BASE COLORS
+     ======================================== */
+
+  --color-primary-darkest: hsl(
+    var(--base-1-h),
+    var(--base-1-s),
+    var(--base-1-l)
+  );
+  --color-primary-dark: hsl(var(--base-2-h), var(--base-2-s), var(--base-2-l));
+  --color-primary-medium: hsl(
+    var(--base-3-h),
+    var(--base-3-s),
+    var(--base-3-l)
+  );
+  --color-primary-light: hsl(var(--base-4-h), var(--base-4-s), var(--base-4-l));
+
+  /* ========================================
+     DERIVED COLOR VARIATIONS
+     ======================================== */
+
+  /* Lightness Variations */
+  --color-primary-darkest-darker: hsl(
+    var(--base-1-h),
+    var(--base-1-s),
+    calc(var(--base-1-l) - 15%)
+  );
+  --color-primary-darkest-lighter: hsl(
+    var(--base-1-h),
+    var(--base-1-s),
+    calc(var(--base-1-l) + 10%)
+  );
+  --color-primary-dark-darker: hsl(
+    var(--base-2-h),
+    var(--base-2-s),
+    calc(var(--base-2-l) - 10%)
+  );
+  --color-primary-dark-lighter: hsl(
+    var(--base-2-h),
+    var(--base-2-s),
+    calc(var(--base-2-l) + 8%)
+  );
+
+  /* Saturation Variations */
+  --color-primary-muted: hsl(
+    var(--base-1-h),
+    calc(var(--base-1-s) - 15%),
+    var(--base-1-l)
+  );
+  --color-primary-vibrant: hsl(
+    var(--base-1-h),
+    calc(var(--base-1-s) + 20%),
+    calc(var(--base-1-l) - 5%)
+  );
+
+  /* ========================================
+     SEMANTIC COLOR ASSIGNMENTS
+     ======================================== */
+
+  --color-background: var(--color-primary-light);
+  --color-surface: color-mix(
+    in srgb,
+    var(--color-primary-medium) 40%,
+    white 60%
+  );
+  --color-accent: var(--color-primary-darkest);
+  --color-highlight: var(--color-primary-dark);
+
+  /* ========================================
+     TEXT COLORS (Auto-calculated for contrast)
+     ======================================== */
+
+  --color-text-primary: hsl(var(--base-1-h), calc(var(--base-1-s) + 10%), 15%);
+  --color-text-secondary: hsla(
+    var(--base-1-h),
+    calc(var(--base-1-s) + 5%),
+    25%,
+    0.8
+  );
+  --color-text-muted: hsla(var(--base-1-h), var(--base-1-s), 35%, 0.6);
+  --color-text-accent: var(--color-primary-darkest);
+  --color-text-on-dark: var(--color-primary-light);
+}

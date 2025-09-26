@@ -1,0 +1,69 @@
+/* ========================================
+   COMPONENT COLORS
+   ========================================
+   
+   Colors specifically for UI components like cards, buttons, forms.
+   All mathematically derived from the base palette.
+   ======================================== */
+
+:root {
+  /* ========================================
+     COMPONENT COLORS (Auto-calculated)
+     ======================================== */
+
+  /* Card Colors */
+  --color-card-background: color-mix(
+    in srgb,
+    var(--color-primary-medium) 20%,
+    transparent 80%
+  );
+  --color-card-border: hsla(
+    var(--base-2-h),
+    var(--base-2-s),
+    var(--base-2-l),
+    0.3
+  );
+  --color-card-shadow: hsla(
+    var(--base-1-h),
+    var(--base-1-s),
+    var(--base-1-l),
+    0.15
+  );
+
+  /* Button Colors */
+  --color-button-primary: var(--color-primary-darkest);
+  --color-button-primary-hover: var(--color-primary-darkest-darker);
+  --color-button-secondary: var(--color-primary-dark);
+  --color-button-secondary-hover: var(--color-primary-dark-darker);
+  --color-button-ghost: transparent;
+  --color-button-ghost-hover: var(--color-hover);
+
+  /* ========================================
+     STATUS COLORS (Harmonized with palette)
+     ======================================== */
+
+  --color-success: hsl(142, 76%, 50%); /* Green, but harmonized */
+  --color-success-bg: color-mix(
+    in srgb,
+    hsl(142, 76%, 50%) 10%,
+    var(--color-surface) 90%
+  );
+  --color-warning: hsl(38, 92%, 50%); /* Orange, harmonized */
+  --color-warning-bg: color-mix(
+    in srgb,
+    hsl(38, 92%, 50%) 10%,
+    var(--color-surface) 90%
+  );
+  --color-error: hsl(0, 84%, 60%); /* Red, softer */
+  --color-error-bg: color-mix(
+    in srgb,
+    hsl(0, 84%, 60%) 10%,
+    var(--color-surface) 90%
+  );
+  --color-info: var(--color-primary-darkest);
+  --color-info-bg: color-mix(
+    in srgb,
+    var(--color-primary-darkest) 10%,
+    var(--color-surface) 90%
+  );
+}
