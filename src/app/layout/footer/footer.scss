@@ -1,0 +1,72 @@
+footer {
+  // Ensure footer stays at bottom for short content pages
+  // Works with app-layout flex container
+  margin-top: auto;
+
+  // Social links hover effects
+  .social-links a {
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: var(--color-primary) !important;
+      opacity: 1 !important;
+      transform: translateY(-2px);
+    }
+  }
+
+  // Quick links hover effects
+  .hover-primary:hover {
+    color: var(--color-primary) !important;
+    opacity: 1 !important;
+    transition: all 0.3s ease;
+  }
+
+  // Contact links hover effects
+  a[href^='mailto:'],
+  a[href^='tel:'] {
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: var(--color-primary) !important;
+      opacity: 1 !important;
+    }
+  }
+
+  // Service items styling
+  .services-list li {
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: var(--color-primary) !important;
+      opacity: 1 !important;
+      padding-left: 0.5rem;
+    }
+  }
+
+  // Footer bottom section with subtle border using color variables
+  .footer-bottom {
+    border-top: 1px solid rgba(var(--color-light-rgb), 0.1);
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  footer {
+    // Center social links on mobile
+    .d-flex.gap-3 {
+      justify-content: center;
+    }
+
+    .social-links {
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    // Adjust service items hover effect for mobile
+    .services-list li:hover {
+      padding-left: 0; // Remove padding shift on mobile
+    }
+  }
+}
