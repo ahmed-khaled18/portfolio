@@ -1,8 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideZonelessChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { DebugElement } from '@angular/core';
-import { By } from '@angular/platform-browser';
 
 import { Navbar } from './navbar';
 import { NAVBAR_CONFIG } from './navbar.config';
