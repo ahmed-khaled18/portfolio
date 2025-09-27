@@ -3,21 +3,21 @@
 // CSS Custom Properties (CSS Variables) - Available globally
 :root {
   // Color Variables - Custom Theme Palette
-  --color-light: #d9e2f2;
+  --color-light: #edf1d6;
   --color-white: #ffffff;
-  --color-dark: #1e1d4d;
-  --color-primary: #7b3095;
-  --color-secondary: #dc2776;
-  --color-info: #e6b271;
+  --color-dark: #40513b;
+  --color-primary: #609966;
+  --color-secondary: #9dc08b;
+  --color-info: #609966;
   --color-success: #1dad6f;
   --color-warning: #dfd01b;
   --color-danger: #ed320d;
 
   // Color variants with opacity
-  --color-primary-rgb: 123, 48, 149;
-  --color-secondary-rgb: 220, 39, 118;
-  --color-dark-rgb: 30, 29, 77;
-  --color-light-rgb: 217, 226, 242;
+  --color-primary-rgb: 96, 153, 102;
+  --color-secondary-rgb: 157, 192, 139;
+  --color-dark-rgb: 64, 81, 59;
+  --color-light-rgb: 237, 241, 214;
 
   // Font Family Variables
   --font-family-sans-serif:
