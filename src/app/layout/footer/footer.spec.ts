@@ -37,7 +37,9 @@ describe('Footer', () => {
 
   describe('Template Rendering', () => {
     it('should render personal info section', () => {
-      const nameElement = fixture.debugElement.query(By.css('h5.font-dancing'));
+      const nameElement = fixture.debugElement.query(
+        By.css('h5.font-orbitron')
+      );
       const descriptionElement = fixture.debugElement.query(
         By.css('p.text-light.opacity-75')
       );
