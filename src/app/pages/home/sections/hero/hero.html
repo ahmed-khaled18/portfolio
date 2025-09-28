@@ -1,0 +1,76 @@
+<section class="min-vh-100 d-flex align-items-center">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Text Content -->
+      <div class="col-lg-6 col-md-12 mb-5 mb-lg-0">
+        <div class="hero-content">
+          <h1 class="display-4 font-orbitron fw-bold mb-3">{{ config.personalInfo.name }}</h1>
+          <h2 class="h3 mb-4">{{ config.personalInfo.title }}</h2>
+          <p class="lead mb-4">
+            {{ config.personalInfo.description }}
+          </p>
+
+          <!-- Key Skills Badges -->
+          <div class="mb-4">
+            @for (skill of config.skills; track skill.name) {
+              <span class="badge bg-primary me-2 mb-2 px-3 py-2">{{ skill.name }}</span>
+            }
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="hero-actions">
+            @for (action of config.actions; track action.label) {
+              @if (action.href) {
+                <a [href]="action.href" [download]="action.download" class="btn btn-primary btn-lg me-3 mb-3">
+                  <i class="bi bi-download me-2"></i>
+                  {{ action.label }}
+                </a>
+              } @else if (action.routerLink) {
+                <a [routerLink]="action.routerLink" class="btn btn-outline-dark btn-lg mb-3">
+                  <i class="bi bi-envelope me-2"></i>
+                  {{ action.label }}
+                </a>
+              }
+            }
+          </div>
+        </div>
+      </div>
+
+      <!-- Profile Image -->
+      <div class="col-lg-6 col-md-12 text-center">
+        <div class="hero-image-container position-relative">
+          <div class="profile-image-wrapper">
+            <img
+              [ngSrc]="config.personalInfo.profileImage.src"
+              [alt]="config.personalInfo.profileImage.alt"
+              [width]="config.personalInfo.profileImage.width"
+              [height]="config.personalInfo.profileImage.height"
+              class="img-fluid rounded-circle shadow-lg profile-image"
+              priority
+            />
+            <!-- Decorative Elements -->
+            @for (floatingIcon of config.floatingIcons; track floatingIcon.icon; let i = $index) {
+              <div
+                class="floating-icon position-absolute"
+                [style.top]="floatingIcon.position.top"
+                [style.right]="floatingIcon.position.right"
+                [style.bottom]="floatingIcon.position.bottom"
+                [style.left]="floatingIcon.position.left"
+                [style.animation-delay]="floatingIcon.animationDelay"
+              >
+                <i [class]="floatingIcon.icon" class="text-primary"></i>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Down Indicator -->
+    <div class="text-center mt-5">
+      <div class="scroll-indicator">
+        <i class="bi bi-chevron-down animate-bounce"></i>
+      </div>
+    </div>
+  </div>
+</section>
