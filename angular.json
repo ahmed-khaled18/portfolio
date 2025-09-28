@@ -31,7 +31,14 @@
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/assets"],
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public",
+                "output": "."
+              },
+              "src/assets"
+            ],
             "styles": [
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "src/styles.scss"
