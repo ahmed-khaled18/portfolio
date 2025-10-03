@@ -1,7 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideZonelessChangeDetection } from '@angular/core';
+import { provideHttpClient } from '@angular/common/http';
 
 import { Contact } from './contact';
-import { provideZonelessChangeDetection } from '@angular/core';
 
 describe('Contact', () => {
   let component: Contact;
@@ -10,7 +11,7 @@ describe('Contact', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [Contact],
-      providers: [provideZonelessChangeDetection()],
+      providers: [provideZonelessChangeDetection(), provideHttpClient()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(Contact);
@@ -20,5 +21,13 @@ describe('Contact', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should have config defined', () => {
+    expect(component.config).toBeTruthy();
+    expect(component.config.hero).toBeTruthy();
+    expect(component.config.formFields).toBeTruthy();
+    expect(component.config.contactInfo).toBeTruthy();
+    expect(component.config.socialLinks).toBeTruthy();
   });
 });

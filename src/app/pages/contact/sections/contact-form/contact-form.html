@@ -1,0 +1,112 @@
+<div class="contact-form-container">
+  <h3 class="h5 fw-bold mb-2">Send Me a Message</h3>
+  <p class="text-muted mb-4 small">Fill out the form below and I'll get back to you as soon as possible.</p>
+
+  <!-- Success Message -->
+  @if (formStatus().success) {
+    <div class="alert alert-success border-0 py-2 px-3 mb-3" role="alert">
+      <i class="bi bi-check-circle-fill me-2"></i>
+      {{ formStatus().message }}
+    </div>
+  }
+
+  <!-- Error Message -->
+  @if (formStatus().error) {
+    <div class="alert alert-danger border-0 py-2 px-3 mb-3" role="alert">
+      <i class="bi bi-exclamation-triangle-fill me-2"></i>
+      {{ formStatus().message }}
+    </div>
+  }
+
+  <!-- Contact Form -->
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div class="row g-3">
+      @for (field of formFields(); track field.name) {
+        <div class="col-12">
+          @if (field.type === 'textarea') {
+            <div class="form-floating">
+              <textarea
+                [id]="field.name"
+                [formControlName]="field.name"
+                [placeholder]="field.placeholder"
+                [rows]="field.rows || 4"
+                class="form-control"
+                style="height: 100px"
+                [class.is-invalid]="contactForm.get(field.name)?.invalid && contactForm.get(field.name)?.touched"
+              ></textarea>
+              <label [for]="field.name">
+                <i [class]="field.icon + ' me-2'"></i>
+                {{ field.label }}
+                @if (field.required) {
+                  <span class="text-danger">*</span>
+                }
+              </label>
+              @if (contactForm.get(field.name)?.invalid && contactForm.get(field.name)?.touched) {
+                <div class="invalid-feedback">
+                  @if (contactForm.get(field.name)?.hasError('required')) {
+                    This field is required
+                  }
+                  @if (contactForm.get(field.name)?.hasError('minlength')) {
+                    Minimum length is
+                    {{ contactForm.get(field.name)?.getError('minlength')?.requiredLength }} characters
+                  }
+                  @if (contactForm.get(field.name)?.hasError('maxlength')) {
+                    Maximum length is
+                    {{ contactForm.get(field.name)?.getError('maxlength')?.requiredLength }} characters
+                  }
+                </div>
+              }
+            </div>
+          } @else {
+            <div class="form-floating">
+              <input
+                [type]="field.type"
+                [id]="field.name"
+                [formControlName]="field.name"
+                [placeholder]="field.placeholder"
+                class="form-control"
+                [class.is-invalid]="contactForm.get(field.name)?.invalid && contactForm.get(field.name)?.touched"
+              />
+              <label [for]="field.name">
+                <i [class]="field.icon + ' me-2'"></i>
+                {{ field.label }}
+                @if (field.required) {
+                  <span class="text-danger">*</span>
+                }
+              </label>
+              @if (contactForm.get(field.name)?.invalid && contactForm.get(field.name)?.touched) {
+                <div class="invalid-feedback">
+                  @if (contactForm.get(field.name)?.hasError('required')) {
+                    This field is required
+                  }
+                  @if (contactForm.get(field.name)?.hasError('email')) {
+                    Please enter a valid email address
+                  }
+                  @if (contactForm.get(field.name)?.hasError('minlength')) {
+                    Minimum length is
+                    {{ contactForm.get(field.name)?.getError('minlength')?.requiredLength }} characters
+                  }
+                  @if (contactForm.get(field.name)?.hasError('maxlength')) {
+                    Maximum length is
+                    {{ contactForm.get(field.name)?.getError('maxlength')?.requiredLength }} characters
+                  }
+                </div>
+              }
+            </div>
+          }
+        </div>
+      }
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary w-100 mt-3 py-2 fw-semibold" [disabled]="formStatus().submitting">
+      @if (formStatus().submitting) {
+        <span class="spinner-border spinner-border-sm me-2"></span>
+        Sending...
+      } @else {
+        <i class="bi bi-send me-2"></i>
+        {{ submitButtonText() }}
+      }
+    </button>
+  </form>
+</div>

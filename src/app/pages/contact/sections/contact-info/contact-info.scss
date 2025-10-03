@@ -1,0 +1,28 @@
+// Minimal custom styles for contact info
+.contact-info-container {
+  .contact-info-item {
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: rgba(var(--bs-primary-rgb), 0.05);
+    }
+  }
+
+  .hover-primary {
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--bs-primary) !important;
+    }
+  }
+
+  .social-link {
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: var(--bs-primary) !important;
+      color: var(--bs-white) !important;
+      transform: translateY(-3px);
+    }
+  }
+}

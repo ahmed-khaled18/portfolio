@@ -1,0 +1,27 @@
+// Minimal custom styles for contact form
+.contact-form-container {
+  .form-control {
+    transition: all 0.3s ease;
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.1);
+    }
+
+    &.is-invalid:focus {
+      box-shadow: 0 0 0 0.2rem rgba(var(--bs-danger-rgb), 0.1);
+    }
+  }
+
+  .form-floating > label i {
+    color: var(--bs-primary);
+  }
+
+  .btn-primary {
+    transition: all 0.3s ease;
+
+    &:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(var(--bs-primary-rgb), 0.3);
+    }
+  }
+}

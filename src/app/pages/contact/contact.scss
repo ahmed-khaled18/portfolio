@@ -1,0 +1,15 @@
+// Minimal custom styles - most styling done with Bootstrap classes
+.contact-content {
+  padding-bottom: 60px;
+
+  .card {
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+    }
+  }
+}
