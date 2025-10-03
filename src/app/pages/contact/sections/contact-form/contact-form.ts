@@ -14,8 +14,7 @@ import {
   Validators,
 } from '@angular/forms';
 import type { ContactFormField, FormStatus } from '../../contact.model';
-import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../../../environments/environment.development';
+import { ContactService } from '../../../../core/services/contact.service';
 
 @Component({
   selector: 'app-contact-form',
@@ -26,7 +25,7 @@ import { environment } from '../../../../../environments/environment.development
 })
 export class ContactFormComponent {
   private readonly fb: FormBuilder = inject(FormBuilder);
-  private readonly http: HttpClient = inject(HttpClient);
+  private readonly contactService: ContactService = inject(ContactService);
 
   formFields: InputSignal<ContactFormField[]> =
     input.required<ContactFormField[]>();
@@ -75,16 +74,11 @@ export class ContactFormComponent {
     });
 
     try {
-      const formData: { access_key: string; [key: string]: unknown } = {
-        access_key: environment.web3forms.accessKey,
-        ...this.contactForm.value,
-      };
+      const success: boolean = await this.contactService.sendContactForm(
+        this.contactForm.value
+      );
 
-      const response: { success: boolean } | undefined = await this.http
-        .post<{ success: boolean }>(environment.web3forms.endpoint, formData)
-        .toPromise();
-
-      if (response?.success) {
+      if (success) {
         this.formStatus.set({
           submitting: false,
           success: true,
