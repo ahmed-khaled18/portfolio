@@ -1,4 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import type { SkillsConfig } from './skills.model';
+import { SKILLS_CONFIG } from './skills.config';
 
 @Component({
   selector: 'app-skills',
@@ -7,4 +9,6 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   styleUrl: './skills.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Skills {}
+export class Skills {
+  protected readonly config: SkillsConfig = SKILLS_CONFIG;
+}

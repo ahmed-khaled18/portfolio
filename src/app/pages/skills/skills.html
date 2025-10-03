@@ -1,1 +1,92 @@
-<p>skills works!</p>
+<section class="skills-section py-5 bg-light">
+  <div class="container">
+    <!-- Page Header -->
+    <div class="row mb-5">
+      <div class="col-12 text-center">
+        <h1 class="display-4 fw-bold mb-3 text-dark">
+          {{ config.pageTitle }}
+        </h1>
+        <p class="lead text-muted">{{ config.pageDescription }}</p>
+      </div>
+    </div>
+
+    <!-- Skills Categories -->
+    @for (category of config.categories; track category.title) {
+      <div class="mb-5">
+        <div class="category-section card border-0 shadow-sm bg-white rounded-3 p-4 h-100">
+          <div class="card-body p-0">
+            <!-- Category Header -->
+            <div class="d-flex align-items-center pb-3 mb-4 border-bottom border-secondary border-opacity-25">
+              <div
+                class="category-icon bg-primary bg-gradient text-white rounded-3 shadow-sm me-3 d-flex align-items-center justify-content-center"
+              >
+                <i class="{{ category.icon }} fs-2"></i>
+              </div>
+              <div class="flex-grow-1">
+                <h2 class="h3 mb-1 text-dark fw-bold">{{ category.title }}</h2>
+                <p class="text-muted mb-0 small">{{ category.description }}</p>
+              </div>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="row g-3 g-md-4">
+              @for (skill of category.skills; track skill.name) {
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                  <div
+                    class="skill-card card border border-secondary border-opacity-25 text-center p-3 h-100 bg-white rounded-3 shadow-sm"
+                  >
+                    <div class="card-body p-0 d-flex flex-column">
+                      <div class="skill-icon mb-3 d-flex align-items-center justify-content-center">
+                        @if (skill.iconData) {
+                          <svg
+                            role="img"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                            [attr.aria-label]="skill.iconData.title"
+                            width="48"
+                            height="48"
+                            [attr.fill]="'#' + skill.iconData.hex"
+                          >
+                            <title>{{ skill.iconData.title }}</title>
+                            <path [attr.d]="skill.iconData.path" />
+                          </svg>
+                        }
+                      </div>
+                      <h6 class="skill-name mb-2 fw-semibold text-dark small lh-sm">
+                        {{ skill.name }}
+                      </h6>
+                      @if (skill.stars !== undefined) {
+                        <div class="star-rating mt-auto mb-2">
+                          @for (star of [1, 2, 3, 4, 5]; track star) {
+                            @if (skill.stars >= star) {
+                              <i class="bi bi-star-fill text-warning"></i>
+                            } @else if (skill.stars >= star - 0.5) {
+                              <i class="bi bi-star-half text-warning"></i>
+                            } @else {
+                              <i class="bi bi-star text-warning"></i>
+                            }
+                          }
+                        </div>
+                      }
+                      @if (skill.level) {
+                        <span
+                          class="badge mt-1"
+                          [class.bg-success]="skill.level === 'Expert'"
+                          [class.bg-primary]="skill.level === 'Advanced'"
+                          [class.bg-info]="skill.level === 'Intermediate'"
+                          [class.bg-secondary]="skill.level === 'Beginner'"
+                        >
+                          {{ skill.level }}
+                        </span>
+                      }
+                    </div>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>

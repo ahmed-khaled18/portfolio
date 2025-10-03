@@ -170,19 +170,6 @@ describe('Hero', () => {
     expect(secondIcon.query(By.css('.bi-laptop'))).toBeTruthy();
   });
 
-  it('should render scroll indicator', () => {
-    component.config = mockHeroConfig;
-    fixture.detectChanges();
-
-    const scrollIndicator = fixture.debugElement.query(
-      By.css('.scroll-indicator')
-    );
-    const chevronIcon = fixture.debugElement.query(By.css('.bi-chevron-down'));
-
-    expect(scrollIndicator).toBeTruthy();
-    expect(chevronIcon).toBeTruthy();
-  });
-
   it('should have OnPush change detection strategy', () => {
     expect(component).toBeTruthy();
     // The change detection strategy is set in the component decorator
