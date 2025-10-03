@@ -32,6 +32,20 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Create production environment file
+        run: |
+          cat > src/environments/environment.ts << EOF
+          import type { Environment } from './environment.model';
+
+          export const environment: Environment = {
+            production: true,
+            web3forms: {
+              accessKey: '${{ secrets.WEB3FORMS_ACCESS_KEY }}',
+              endpoint: 'https://api.web3forms.com/submit',
+            },
+          };
+          EOF
+
       - name: Run linting
         run: npm run lint
 
