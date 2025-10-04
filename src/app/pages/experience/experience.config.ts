@@ -10,7 +10,7 @@ export const EXPERIENCE_CONFIG: ExperienceConfig = {
       position: 'Full Stack Developer',
       location: 'Cairo, Egypt',
       locationType: 'Hybrid',
-      startDate: '2023-04',
+      startDate: '2024-04',
       endDate: 'Present',
       description:
         'Developing and maintaining full-stack web applications using modern technologies. Leading frontend architecture decisions and implementing scalable solutions.',
