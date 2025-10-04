@@ -1,32 +1,37 @@
-<!-- Contact Hero Section -->
-<app-contact-hero [hero]="config.hero"></app-contact-hero>
+<div class="vh-100 overflow-auto">
+  <!-- Contact Hero Section -->
+  <app-contact-hero [hero]="config.hero"></app-contact-hero>
 
-<!-- Contact Content Section -->
-<section class="contact-content py-4">
-  <div class="container">
-    <div class="row g-4">
-      <!-- Contact Form -->
-      <div class="col-lg-7">
-        <div class="card border-0 shadow-sm h-100">
-          <div class="card-body p-4">
-            <app-contact-form
-              [formFields]="config.formFields"
-              [submitButtonText]="config.submitButtonText"
-              [successMessage]="config.successMessage"
-              [errorMessage]="config.errorMessage"
-            ></app-contact-form>
+  <!-- Contact Content Section -->
+  <section class="contact-content py-4">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Contact Form -->
+        <div class="col-lg-7">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body p-4">
+              <app-contact-form
+                [formFields]="config.formFields"
+                [submitButtonText]="config.submitButtonText"
+                [successMessage]="config.successMessage"
+                [errorMessage]="config.errorMessage"
+              ></app-contact-form>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Contact Info -->
-      <div class="col-lg-5">
-        <div class="card border-0 shadow-sm h-100">
-          <div class="card-body p-4">
-            <app-contact-info [contactInfo]="config.contactInfo" [socialLinks]="config.socialLinks"></app-contact-info>
+        <!-- Contact Info -->
+        <div class="col-lg-5">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body p-4">
+              <app-contact-info
+                [contactInfo]="config.contactInfo"
+                [socialLinks]="config.socialLinks"
+              ></app-contact-info>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
