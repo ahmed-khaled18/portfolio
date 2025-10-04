@@ -1,124 +1,213 @@
-# Portfolio
+<div align="center">
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.1.
+# 🚀 Ahmed Khaled's Portfolio
 
-## 🚀 Live Demo
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=github)](https://ahmed-khaled18.github.io/portfolio/)
+[![Angular](https://img.shields.io/badge/Angular-20.3-DD0031?style=for-the-badge&logo=angular)](https://angular.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
-Visit the live portfolio at: [https://ahmed-khaled18.github.io/portfolio/](https://ahmed-khaled18.github.io/portfolio/)
+**A modern, responsive portfolio website built with cutting-edge Angular features**
+
+[Live Demo](https://ahmed-khaled18.github.io/portfolio/) · [Report Bug](https://github.com/ahmed-khaled18/portfolio/issues) · [Request Feature](https://github.com/ahmed-khaled18/portfolio/issues)
+
+</div>
+
+---
+
+## ✨ Features
+
+- 🎨 **Modern UI/UX** - Clean, responsive design built with Bootstrap 5
+- ⚡ **Blazing Fast** - Optimized with OnPush change detection and signals
+- 📱 **Fully Responsive** - Seamless experience across all devices
+- 🎯 **Standalone Components** - Modern Angular architecture with no NgModules
+- 🔄 **Reactive State** - Built with Angular Signals for optimal performance
+- 📧 **Contact Form** - Integrated contact functionality
+- 🎭 **Smooth Animations** - Engaging user interactions
+- ♿ **Accessible** - WCAG compliant with semantic HTML
+- 🚀 **CI/CD Ready** - Automated deployment with GitHub Actions
 
 ## 🛠️ Tech Stack
 
-- **Angular 20** - Frontend framework
-- **TypeScript** - Programming language
-- **SCSS** - Styling
-- **ESLint & Prettier** - Code quality and formatting
-- **Husky & lint-staged** - Git hooks for code quality
-- **GitHub Actions** - CI/CD pipeline
-- **GitHub Pages** - Static site hosting
+<div align="center">
 
-## 📦 Development
+| Category         | Technologies                                                                                                                               |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Framework**    | ![Angular](https://img.shields.io/badge/Angular-20.3-DD0031?logo=angular)                                                                  |
+| **Language**     | ![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?logo=typescript)                                                          |
+| **Styling**      | ![SCSS](https://img.shields.io/badge/SCSS-CC6699?logo=sass) ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?logo=bootstrap) |
+| **Code Quality** | ![ESLint](https://img.shields.io/badge/ESLint-8A2BE2?logo=eslint) ![Prettier](https://img.shields.io/badge/Prettier-F7B93E?logo=prettier)  |
+| **Testing**      | ![Jasmine](https://img.shields.io/badge/Jasmine-8A4182?logo=jasmine) ![Karma](https://img.shields.io/badge/Karma-429e38?logo=karma)        |
+| **Git Hooks**    | ![Husky](https://img.shields.io/badge/Husky-042B37?logo=git) ![lint--staged](https://img.shields.io/badge/lint--staged-black?logo=git)     |
+| **CI/CD**        | ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?logo=github-actions)                                                  |
+| **Hosting**      | ![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-222222?logo=github)                                                              |
 
-## 📦 Development
+</div>
 
-### Development server
+## 🎯 Project Structure
 
-To start a local development server, run:
-
-```bash
-npm start
+```
+portfolio/
+├── src/
+│   ├── app/
+│   │   ├── core/           # Core services (contact service, etc.)
+│   │   ├── layout/         # Layout components (navbar, footer)
+│   │   │   ├── footer/
+│   │   │   └── navbar/
+│   │   ├── pages/          # Page components
+│   │   │   ├── home/
+│   │   │   ├── about/
+│   │   │   ├── experience/
+│   │   │   ├── projects/
+│   │   │   ├── skills/
+│   │   │   └── contact/
+│   │   ├── app.config.ts   # App configuration
+│   │   └── app.routes.ts   # Route definitions
+│   ├── assets/             # Static assets
+│   ├── environments/       # Environment configurations
+│   └── styles/             # Global styles
+├── public/                 # Public assets
+└── scripts/                # Build scripts
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🚀 Quick Start
 
-### Available Scripts
+### Prerequisites
 
-- `npm start` - Start development server
-- `npm run build` - Build for development
-- `npm run build:prod` - Build for production
-- `npm run build:github-pages` - Build for GitHub Pages deployment
-- `npm run test` - Run unit tests
-- `npm run lint` - Run ESLint
-- `npm run lint:fix` - Run ESLint with auto-fix
-- `npm run format` - Format code with Prettier
-- `npm run format:check` - Check code formatting
+- Node.js (v20 or higher)
+- npm (v10 or higher)
+
+### Installation
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/ahmed-khaled18/portfolio.git
+   cd portfolio
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+
+   ```bash
+   npm start
+   ```
+
+4. **Open your browser**
+
+   Navigate to `http://localhost:4200/` 🎉
+
+## 📜 Available Scripts
+
+| Command                      | Description                  |
+| ---------------------------- | ---------------------------- |
+| `npm start`                  | 🏃 Start development server  |
+| `npm run build`              | 🔨 Build for development     |
+| `npm run build:prod`         | 🚀 Build for production      |
+| `npm run build:github-pages` | 📦 Build for GitHub Pages    |
+| `npm test`                   | 🧪 Run unit tests            |
+| `npm run test:ci`            | 🤖 Run tests in CI mode      |
+| `npm run lint`               | 🔍 Run ESLint                |
+| `npm run lint:fix`           | 🔧 Fix ESLint errors         |
+| `npm run format`             | 💅 Format code with Prettier |
+| `npm run format:check`       | ✅ Check code formatting     |
 
 ## 🚀 Deployment
 
-This project is automatically deployed to GitHub Pages using GitHub Actions. Every push to the `main` branch triggers:
+### Automatic Deployment
 
-1. **Code Quality Checks**: ESLint and Prettier validation
-2. **Testing**: Unit tests execution
-3. **Build**: Production build with GitHub Pages configuration
-4. **Deploy**: Automatic deployment to GitHub Pages
+This project uses **GitHub Actions** for continuous deployment. Every push to the `main` branch automatically:
+
+1. ✅ Runs code quality checks (ESLint + Prettier)
+2. 🧪 Executes all unit tests
+3. 🔨 Builds the production bundle
+4. 🚀 Deploys to GitHub Pages
 
 ### Manual Deployment
 
-To manually deploy to GitHub Pages:
+To manually deploy:
 
 ```bash
 npm run build:github-pages
 ```
 
-## 🔧 Code Quality
+The build artifacts will be stored in the `dist/` directory.
 
-This project includes comprehensive code quality tools:
+## 🔧 Code Quality & Best Practices
 
-- **ESLint**: TypeScript and Angular-specific linting rules
-- **Prettier**: Code formatting
-- **Husky**: Git hooks for pre-commit validation
-- **lint-staged**: Run linters on staged files only
-- **Commitlint**: Conventional commit message validation
+This project maintains high code quality standards through:
 
-### Git Hooks
+### 🎯 Linting & Formatting
 
-Pre-commit hooks automatically:
+- **ESLint** - TypeScript and Angular-specific rules
+- **Prettier** - Consistent code formatting
+- **Pre-commit hooks** - Automatic validation before commits
 
-- Run ESLint with auto-fix
-- Format code with Prettier
-- Validate commit messages
+### 🧪 Testing
 
-## Code scaffolding
+- **Unit Tests** - Comprehensive test coverage with Jasmine & Karma
+- **CI Testing** - Automated testing in the pipeline
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### 📝 Commit Standards
 
-```bash
-ng generate component component-name
-```
+- **Commitlint** - Enforces conventional commit messages
+- **Husky** - Git hooks for automated checks
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### ⚡ Angular Best Practices
 
-```bash
-ng generate --help
-```
+- ✅ Standalone components (no NgModules)
+- ✅ Signals for reactive state management
+- ✅ OnPush change detection strategy
+- ✅ Lazy loading for optimal performance
+- ✅ Type-safe throughout
 
-## Building
+## 🎨 Key Features Implemented
 
-To build the project run:
+- **Responsive Navigation** - Mobile-friendly navbar with smooth transitions
+- **Dynamic Sections** - Home, About, Experience, Projects, Skills, Contact
+- **Contact Form** - Fully functional with validation
+- **Social Links** - GitHub, LinkedIn, Email integration
+- **SEO Optimized** - Meta tags and semantic HTML
+- **Performance** - Optimized images, lazy loading, and efficient rendering
 
-```bash
-ng build
-```
+## 🤝 Contributing
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Contributions, issues, and feature requests are welcome!
 
-## Running unit tests
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'feat: add some amazing feature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 📝 License
 
-```bash
-ng test
-```
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Running end-to-end tests
+## 👨‍💻 Author
 
-For end-to-end (e2e) testing, run:
+**Ahmed Khaled**
 
-```bash
-ng e2e
-```
+- GitHub: [@ahmed-khaled18](https://github.com/ahmed-khaled18)
+- LinkedIn: [Ahmed Khaled](https://www.linkedin.com/in/ahmedknasr/)
+- Email: a.k.nasr18@gmail.com
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 🌟 Show your support
 
-## Additional Resources
+Give a ⭐️ if you like this project!
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+
+<div align="center">
+
+**Built with ❤️ using Angular 20 and TypeScript**
+
+[![Angular](https://img.shields.io/badge/Made%20with-Angular-DD0031?style=flat&logo=angular)](https://angular.dev)
+[![TypeScript](https://img.shields.io/badge/Written%20in-TypeScript-3178C6?style=flat&logo=typescript)](https://www.typescriptlang.org/)
+
+</div>

@@ -191,7 +191,7 @@ describe('Hero', () => {
     );
 
     expect(heroSection).toBeTruthy();
-    expect(heroSection.nativeElement.classList).toContain('vh-100');
+    expect(heroSection.nativeElement.classList).toContain('min-vh-100');
     expect(container).toBeTruthy();
     expect(row).toBeTruthy();
     expect(textColumn).toBeTruthy();
