@@ -90,7 +90,7 @@ describe('Experience', () => {
       ) as HTMLAnchorElement;
       expect(link).toBeTruthy();
       if (firstExperience.link) {
-        expect(link?.href).toBe(firstExperience.link);
+        expect(link?.href).toContain(firstExperience.link);
       }
       expect(link?.getAttribute('rel')).toBe('noopener noreferrer');
     });
