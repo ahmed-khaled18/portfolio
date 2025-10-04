@@ -1,1 +1,123 @@
-<p>experience works!</p>
+<section class="min-vh-100 py-5">
+  <div class="container">
+    <!-- Page Header -->
+    <div class="row mb-5">
+      <div class="col-12 text-center">
+        <h1 class="display-4 fw-bold mb-3">{{ config.pageTitle }}</h1>
+        <p class="lead text-muted">{{ config.pageDescription }}</p>
+      </div>
+    </div>
+
+    <!-- Experience Timeline -->
+    <div class="row">
+      <div class="col-12">
+        <div class="timeline position-relative ps-5">
+          @for (exp of config.experiences; track exp.company + exp.startDate) {
+            <div class="mb-5">
+              <!-- Timeline Marker (relative to timeline container) -->
+              <div class="timeline-marker position-absolute top-0 rounded-circle"></div>
+
+              <!-- Experience Card -->
+              <div class="card border-0 shadow-sm rounded-3 p-4 bg-white transition-transform">
+                <!-- Company Header -->
+                <div class="d-flex align-items-center mb-4 flex-wrap gap-3">
+                  @if (exp.companyLogo) {
+                    <div class="company-logo">
+                      <img
+                        [ngSrc]="exp.companyLogo"
+                        [alt]="exp.company + ' logo'"
+                        width="80"
+                        height="80"
+                        class="rounded-3 shadow-sm bg-white p-2 border border-light object-fit-contain"
+                        priority
+                      />
+                    </div>
+                  }
+                  <div class="flex-grow-1">
+                    <div class="d-flex justify-content-between align-items-start flex-wrap gap-3">
+                      <div>
+                        <h2 class="h4 mb-1 fw-bold text-dark">
+                          {{ exp.position }}
+                        </h2>
+                        <h3 class="h6 text-primary mb-1 fw-semibold">
+                          @if (exp.link) {
+                            <a
+                              [href]="exp.link"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              class="text-decoration-none text-primary"
+                            >
+                              {{ exp.company }}
+                              <i class="bi bi-box-arrow-up-right ms-1 small"></i>
+                            </a>
+                          } @else {
+                            {{ exp.company }}
+                          }
+                        </h3>
+                        <div class="text-muted small">
+                          <i class="bi bi-geo-alt me-1"></i>
+                          {{ exp.location }} • {{ exp.locationType }}
+                        </div>
+                      </div>
+                      <div>
+                        <span class="badge bg-primary text-white px-3 py-2 fs-6 fw-medium">
+                          <i class="bi bi-calendar-event me-2"></i>
+                          {{ exp.startDate | date: 'MMM yyyy' }} -
+                          @if (exp.endDate === 'Present') {
+                            <span>Present</span>
+                          } @else {
+                            <span>{{ exp.endDate | date: 'MMM yyyy' }}</span>
+                          }
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Description -->
+                <p class="text-muted mb-4 lh-base">{{ exp.description }}</p>
+
+                <!-- Key Achievements -->
+                @if (exp.achievements && exp.achievements.length > 0) {
+                  <div class="mb-4">
+                    <h4 class="h6 fw-bold mb-3 text-dark">
+                      <i class="bi bi-trophy text-warning me-2"></i>
+                      Key Achievements
+                    </h4>
+                    <ul class="list-unstyled ps-0 mb-0">
+                      @for (achievement of exp.achievements; track achievement) {
+                        <li class="text-muted mb-2 position-relative ps-4 lh-base">
+                          <i class="bi bi-check-circle-fill text-success position-absolute start-0 top-0"></i>
+                          {{ achievement }}
+                        </li>
+                      }
+                    </ul>
+                  </div>
+                }
+
+                <!-- Technologies Used -->
+                @if (exp.technologies && exp.technologies.length > 0) {
+                  <div>
+                    <h4 class="h6 fw-bold mb-3 text-dark">
+                      <i class="bi bi-tools me-2 text-primary"></i>
+                      Technologies Used
+                    </h4>
+                    <div class="d-flex flex-wrap gap-2">
+                      @for (tech of exp.technologies; track tech) {
+                        <span
+                          class="badge bg-light text-dark border border-secondary border-opacity-25 px-3 py-2 fw-medium tech-badge"
+                        >
+                          {{ tech }}
+                        </span>
+                      }
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
