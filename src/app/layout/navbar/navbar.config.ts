@@ -2,7 +2,7 @@ import { NavbarConfig } from './navbar.model';
 
 export const NAVBAR_CONFIG: NavbarConfig = {
   navigationItems: [
-    { label: 'Home', route: '/home' },
+    { label: 'Home', route: '/' },
     { label: 'Skills', route: '/skills' },
     { label: 'Projects', route: '/projects' },
     { label: 'Experience', route: '/experience' },

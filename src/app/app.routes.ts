@@ -6,11 +6,6 @@ type ComponentModule = Record<string, Type<unknown>>;
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
-    pathMatch: 'full',
-  },
-  {
-    path: 'home',
     loadComponent: () =>
       import('./pages/home/home').then((m: ComponentModule) => m['Home']),
   },
@@ -42,6 +37,7 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/home',
+    redirectTo: '',
+    pathMatch: 'full',
   },
 ];

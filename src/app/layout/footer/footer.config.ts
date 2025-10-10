@@ -37,7 +37,7 @@ export const FOOTER_CONFIG: FooterConfig = {
     },
   ],
   navigationLinks: [
-    { label: 'Home', route: '/home' },
+    { label: 'Home', route: '/' },
     { label: 'Experience', route: '/experience' },
     { label: 'Projects', route: '/projects' },
     { label: 'Skills', route: '/skills' },
