@@ -2,7 +2,7 @@ import type { FooterConfig } from './footer.model';
 
 export const FOOTER_CONFIG: FooterConfig = {
   personalInfo: {
-    name: 'Ahmed Khaled (@ahmedknasr)',
+    name: 'Ahmed Khaled (@ahmedknasr.dev)',
     description:
       'Full Stack Developer passionate about creating innovative web solutions and delivering exceptional user experiences.',
   },
@@ -94,6 +94,6 @@ export const FOOTER_CONFIG: FooterConfig = {
     },
   ],
   copyright: {
-    text: 'ahmedknasr | Ahmed Khaled. All rights reserved.',
+    text: 'ahmedknasr.dev | Ahmed Khaled. All rights reserved.',
   },
 };
