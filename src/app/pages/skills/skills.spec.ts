@@ -109,12 +109,16 @@ describe('Skills', () => {
     });
 
     it('should render skill icons', () => {
-      const skillIcons = compiled.querySelectorAll('.skill-icon svg');
+      const skillIcons = compiled.querySelectorAll('.skill-icon i');
       expect(skillIcons.length).toBeGreaterThan(0);
 
-      skillIcons.forEach(svgElement => {
-        expect(svgElement.getAttribute('role')).toBe('img');
-        expect(svgElement.getAttribute('viewBox')).toBe('0 0 24 24');
+      skillIcons.forEach(iconElement => {
+        // Check that it has a devicon class
+        const hasDeviconClass = Array.from(iconElement.classList).some(cls =>
+          cls.startsWith('devicon-')
+        );
+        expect(hasDeviconClass).toBe(true);
+        expect(iconElement.getAttribute('aria-label')).toBeTruthy();
       });
     });
 
@@ -194,31 +198,31 @@ describe('Skills', () => {
     });
   });
 
-  describe('SVG Icon Attributes', () => {
-    it('should set correct fill color for SVG icons', () => {
-      const svgIcons = compiled.querySelectorAll('.skill-icon svg');
+  describe('Devicon Icon Attributes', () => {
+    it('should have devicon classes for icons', () => {
+      const iconElements = compiled.querySelectorAll('.skill-icon i');
 
-      svgIcons.forEach(svg => {
-        const fillAttr = svg.getAttribute('fill');
-        expect(fillAttr).toMatch(/^#[0-9A-Fa-f]{6}$/); // Hex color format
+      iconElements.forEach(icon => {
+        const hasDeviconClass = Array.from(icon.classList).some(cls =>
+          cls.startsWith('devicon-')
+        );
+        expect(hasDeviconClass).toBe(true);
       });
     });
 
-    it('should have title elements in SVG for accessibility', () => {
-      const svgIcons = compiled.querySelectorAll('.skill-icon svg');
+    it('should have colored class for icons', () => {
+      const iconElements = compiled.querySelectorAll('.skill-icon i');
 
-      svgIcons.forEach(svg => {
-        const title = svg.querySelector('title');
-        expect(title).toBeTruthy();
-        expect(title?.textContent).toBeTruthy();
+      iconElements.forEach(icon => {
+        expect(icon.classList.contains('colored')).toBe(true);
       });
     });
 
-    it('should have aria-label attributes for SVG icons', () => {
-      const svgIcons = compiled.querySelectorAll('.skill-icon svg');
+    it('should have aria-label attributes for icons', () => {
+      const iconElements = compiled.querySelectorAll('.skill-icon i');
 
-      svgIcons.forEach(svg => {
-        const ariaLabel = svg.getAttribute('aria-label');
+      iconElements.forEach(icon => {
+        const ariaLabel = icon.getAttribute('aria-label');
         expect(ariaLabel).toBeTruthy();
       });
     });

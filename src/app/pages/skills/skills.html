@@ -37,20 +37,7 @@
                   >
                     <div class="card-body p-0 d-flex flex-column">
                       <div class="skill-icon mb-3 d-flex align-items-center justify-content-center">
-                        @if (skill.iconData) {
-                          <svg
-                            role="img"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
-                            [attr.aria-label]="skill.iconData.title"
-                            width="48"
-                            height="48"
-                            [attr.fill]="'#' + skill.iconData.hex"
-                          >
-                            <title>{{ skill.iconData.title }}</title>
-                            <path [attr.d]="skill.iconData.path" />
-                          </svg>
-                        }
+                        <i class="{{ skill.icon }} colored fs-1" [attr.aria-label]="skill.name"></i>
                       </div>
                       <h6 class="skill-name mb-2 fw-semibold text-dark small lh-sm">
                         {{ skill.name }}

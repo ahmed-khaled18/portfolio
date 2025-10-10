@@ -2,13 +2,8 @@ export type SkillLevel = 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert';
 
 export interface Skill {
   name: string;
-  icon: string; // Simple Icons slug
-  iconData?: {
-    title: string;
-    slug: string;
-    hex: string;
-    path: string;
-  };
+  icon: string; // Devicon class name (e.g., 'devicon-angular-plain')
+  color?: string; // Optional custom color
   level?: SkillLevel;
   stars?: number; // 1-5 rating (can be decimal like 4.5)
   category: string;
