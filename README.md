@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 Ahmed Khaled's Portfolio
+# 🚀 Ahmed Khaled Nasr's Portfolio
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=github)](https://ahmedknasr-dev.github.io/portfolio/)
 [![Angular](https://img.shields.io/badge/Angular-20.3-DD0031?style=for-the-badge&logo=angular)](https://angular.dev)
@@ -191,10 +191,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👨‍💻 Author
 
-**Ahmed Khaled**
+**Ahmed Khaled Nasr**
 
-- GitHub: [@ahmed-khaled18](https://github.com/ahmed-khaled18)
-- LinkedIn: [Ahmed Khaled](https://www.linkedin.com/in/ahmedknasr/)
+- GitHub: [@ahmedknasr-dev](https://github.com/ahmedknasr-dev)
+- LinkedIn: [Ahmed Khaled Nasr](https://www.linkedin.com/in/ahmedknasr/)
 - Email: a.k.nasr18@gmail.com
 
 ## 🌟 Show your support
