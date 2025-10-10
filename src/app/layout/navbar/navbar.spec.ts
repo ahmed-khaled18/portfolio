@@ -52,14 +52,14 @@ describe('Navbar', () => {
   it('should render brand name', () => {
     const brand = compiled.querySelector('.navbar-brand');
     expect(brand).toBeTruthy();
-    expect(brand?.textContent?.trim()).toBe('Ahmed Khaled');
+    expect(brand?.textContent?.trim()).toBe('ahmedknasr');
     expect(brand?.classList.contains('brand-name')).toBeTruthy();
   });
 
   it('should apply elegant styling to brand', () => {
     const brand = compiled.querySelector('.brand-name');
     expect(brand).toBeTruthy();
-    expect(brand?.textContent?.trim()).toBe('Ahmed Khaled');
+    expect(brand?.textContent?.trim()).toBe('ahmedknasr');
   });
 
   it('should render navigation items', () => {
