@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://ahmed-khaled18.github.io/portfolio/sitemap.xml
+Sitemap: https://ahmedknasr-dev.github.io/portfolio/sitemap.xml
 
 # Disallow crawling of unnecessary files
 Disallow: /*.json$

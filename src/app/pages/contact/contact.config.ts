@@ -66,7 +66,7 @@ export const CONTACT_CONFIG: ContactConfig = {
   ],
   socialLinks: [
     {
-      href: 'https://github.com/ahmed-khaled18',
+      href: 'https://github.com/ahmedknasr-dev',
       title: 'GitHub',
       icon: 'bi-github',
       target: '_blank',
@@ -76,6 +76,20 @@ export const CONTACT_CONFIG: ContactConfig = {
       href: 'https://www.linkedin.com/in/ahmedknasr/',
       title: 'LinkedIn',
       icon: 'bi-linkedin',
+      target: '_blank',
+      rel: 'noopener noreferrer',
+    },
+    {
+      href: 'https://www.facebook.com/ahmedknasr.dev',
+      title: 'Facebook',
+      icon: 'bi-facebook',
+      target: '_blank',
+      rel: 'noopener noreferrer',
+    },
+    {
+      href: 'https://www.instagram.com/ahmedknasr.dev/',
+      title: 'Instagram',
+      icon: 'bi-instagram',
       target: '_blank',
       rel: 'noopener noreferrer',
     },

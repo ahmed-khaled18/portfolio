@@ -2,13 +2,13 @@ import type { FooterConfig } from './footer.model';
 
 export const FOOTER_CONFIG: FooterConfig = {
   personalInfo: {
-    name: 'Ahmed Khaled',
+    name: 'Ahmed Khaled (@ahmedknasr)',
     description:
       'Full Stack Developer passionate about creating innovative web solutions and delivering exceptional user experiences.',
   },
   socialLinks: [
     {
-      href: 'https://github.com/ahmed-khaled18',
+      href: 'https://github.com/ahmedknasr-dev',
       title: 'GitHub',
       icon: 'bi-github',
       target: '_blank',
@@ -18,6 +18,20 @@ export const FOOTER_CONFIG: FooterConfig = {
       href: 'https://www.linkedin.com/in/ahmedknasr/',
       title: 'LinkedIn',
       icon: 'bi-linkedin',
+      target: '_blank',
+      rel: 'noopener noreferrer',
+    },
+    {
+      href: 'https://www.facebook.com/ahmedknasr.dev',
+      title: 'Facebook',
+      icon: 'bi-facebook',
+      target: '_blank',
+      rel: 'noopener noreferrer',
+    },
+    {
+      href: 'https://www.instagram.com/ahmedknasr.dev/',
+      title: 'Instagram',
+      icon: 'bi-instagram',
       target: '_blank',
       rel: 'noopener noreferrer',
     },
@@ -80,6 +94,6 @@ export const FOOTER_CONFIG: FooterConfig = {
     },
   ],
   copyright: {
-    text: 'Ahmed Khaled. All rights reserved.',
+    text: 'ahmedknasr | Ahmed Khaled. All rights reserved.',
   },
 };

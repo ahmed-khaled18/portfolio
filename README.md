@@ -2,14 +2,14 @@
 
 # 🚀 Ahmed Khaled's Portfolio
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=github)](https://ahmed-khaled18.github.io/portfolio/)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=github)](https://ahmedknasr-dev.github.io/portfolio/)
 [![Angular](https://img.shields.io/badge/Angular-20.3-DD0031?style=for-the-badge&logo=angular)](https://angular.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
 **A modern, responsive portfolio website built with cutting-edge Angular features**
 
-[Live Demo](https://ahmed-khaled18.github.io/portfolio/) · [Report Bug](https://github.com/ahmed-khaled18/portfolio/issues) · [Request Feature](https://github.com/ahmed-khaled18/portfolio/issues)
+[Live Demo](https://ahmedknasr-dev.github.io/portfolio/) · [Report Bug](https://github.com/ahmedknasr-dev/portfolio/issues) · [Request Feature](https://github.com/ahmedknasr-dev/portfolio/issues)
 
 </div>
 

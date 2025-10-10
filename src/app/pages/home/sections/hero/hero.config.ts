@@ -3,12 +3,12 @@ import { HeroConfig } from './hero.model';
 export const HERO_CONFIG: HeroConfig = {
   personalInfo: {
     name: 'Ahmed Khaled',
-    title: 'Code Artist, Digital Architect',
+    title: 'Code Artist, Digital Architect | @ahmedknasr',
     description:
       'Passionate full-stack software engineer with 2+ years of experience in developing scalable web applications using modern technologies like Angular, React, Node.js, NestJS, and Python FastAPI.',
     profileImage: {
       src: 'assets/images/profile.jpg',
-      alt: 'Ahmed Khaled - Software Engineer',
+      alt: 'ahmedknasr - Ahmed Khaled - Software Engineer',
       width: 400,
       height: 400,
     },
