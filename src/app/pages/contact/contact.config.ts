@@ -80,6 +80,13 @@ export const CONTACT_CONFIG: ContactConfig = {
       rel: 'noopener noreferrer',
     },
     {
+      href: 'https://x.com/ahmedknasr',
+      title: 'X',
+      icon: 'bi-twitter-x',
+      target: '_blank',
+      rel: 'noopener noreferrer',
+    },
+    {
       href: 'https://www.facebook.com/ahmedknasr.dev',
       title: 'Facebook',
       icon: 'bi-facebook',
