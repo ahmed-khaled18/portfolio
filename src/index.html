@@ -78,45 +78,154 @@
       rel="stylesheet"
     />
 
-    <!-- JSON-LD Structured Data -->
+    <!-- Enhanced JSON-LD Structured Data with Multiple Schemas -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Ahmed Khaled Nasr",
-        "alternateName": "ahmedknasr.dev",
-        "jobTitle": ["Software Developer", "Full Stack Developer", "Angular Expert"],
-        "description": "ahmedknasr.dev - Experienced Full Stack Developer specializing in Angular, TypeScript, and modern web technologies.",
-        "url": "https://ahmedknasr-dev.github.io/portfolio/",
-        "image": "https://ahmedknasr-dev.github.io/portfolio/assets/images/profile.jpg",
-        "sameAs": [
-          "https://github.com/ahmedknasr-dev",
-          "https://www.linkedin.com/in/ahmedknasr/",
-          "https://x.com/ahmedknasr",
-          "https://www.facebook.com/ahmedknasr.dev",
-          "https://www.instagram.com/ahmedknasr.dev/"
-        ],
-        "knowsAbout": [
-          "Angular",
-          "TypeScript",
-          "JavaScript",
-          "Node.js",
-          "Full Stack Development",
-          "Web Development",
-          "Frontend Development",
-          "Backend Development"
-        ],
-        "alumniOf": {
-          "@type": "EducationalOrganization",
-          "name": "Ain Shams University",
-          "url": "https://eng.asu.edu.eg/",
-          "department": "Faculty of Engineering"
-        },
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Progressio Solutions",
-          "url": "https://www.progressiosolutions.com/"
-        }
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://ahmedknasr-dev.github.io/portfolio/#person",
+            "name": "Ahmed Khaled Nasr",
+            "alternateName": ["ahmedknasr.dev", "Ahmed Khaled", "ahmedknasr"],
+            "givenName": "Ahmed",
+            "additionalName": "Khaled",
+            "familyName": "Nasr",
+            "gender": "Male",
+            "jobTitle": "Full Stack Developer",
+            "hasOccupation": {
+              "@type": "Occupation",
+              "name": "Software Developer",
+              "occupationLocation": {
+                "@type": "Country",
+                "name": "Egypt"
+              },
+              "skills": ["Angular", "TypeScript", "JavaScript", "Node.js", "Full Stack Development"]
+            },
+            "description": "Experienced Full Stack Developer specializing in Angular, TypeScript, and modern web technologies. Building scalable, performant web applications with clean code and best practices.",
+            "url": "https://ahmedknasr-dev.github.io/portfolio/",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://ahmedknasr-dev.github.io/portfolio/assets/images/profile.jpg",
+              "contentUrl": "https://ahmedknasr-dev.github.io/portfolio/assets/images/profile.jpg"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "EG",
+              "addressRegion": "Cairo"
+            },
+            "nationality": {
+              "@type": "Country",
+              "name": "Egypt"
+            },
+            "sameAs": [
+              "https://github.com/ahmedknasr-dev",
+              "https://www.linkedin.com/in/ahmedknasr/",
+              "https://x.com/ahmedknasr",
+              "https://www.facebook.com/ahmedknasr.dev",
+              "https://www.instagram.com/ahmedknasr.dev/",
+              "https://ahmedknasr-dev.github.io/portfolio/"
+            ],
+            "knowsAbout": [
+              {
+                "@type": "Thing",
+                "name": "Angular"
+              },
+              {
+                "@type": "Thing",
+                "name": "TypeScript"
+              },
+              {
+                "@type": "Thing",
+                "name": "JavaScript"
+              },
+              {
+                "@type": "Thing",
+                "name": "Node.js"
+              },
+              {
+                "@type": "Thing",
+                "name": "Full Stack Development"
+              },
+              {
+                "@type": "Thing",
+                "name": "Web Development"
+              },
+              {
+                "@type": "Thing",
+                "name": "Frontend Development"
+              },
+              {
+                "@type": "Thing",
+                "name": "Backend Development"
+              },
+              {
+                "@type": "Thing",
+                "name": "Software Engineering"
+              }
+            ],
+            "knowsLanguage": [
+              {
+                "@type": "Language",
+                "name": "English"
+              },
+              {
+                "@type": "Language",
+                "name": "Arabic"
+              }
+            ],
+            "alumniOf": {
+              "@type": "EducationalOrganization",
+              "name": "Ain Shams University",
+              "url": "https://eng.asu.edu.eg/",
+              "department": {
+                "@type": "Organization",
+                "name": "Faculty of Engineering"
+              }
+            },
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Progressio Solutions",
+              "url": "https://www.progressiosolutions.com/"
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://ahmedknasr-dev.github.io/portfolio/"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://ahmedknasr-dev.github.io/portfolio/#website",
+            "url": "https://ahmedknasr-dev.github.io/portfolio/",
+            "name": "Ahmed Khaled Nasr - Full Stack Developer Portfolio",
+            "description": "Portfolio website of Ahmed Khaled Nasr, showcasing full stack development projects and skills.",
+            "publisher": {
+              "@id": "https://ahmedknasr-dev.github.io/portfolio/#person"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://ahmedknasr-dev.github.io/portfolio/",
+            "url": "https://ahmedknasr-dev.github.io/portfolio/",
+            "name": "Ahmed Khaled Nasr (@ahmedknasr.dev) - Full Stack Developer",
+            "isPartOf": {
+              "@id": "https://ahmedknasr-dev.github.io/portfolio/#website"
+            },
+            "about": {
+              "@id": "https://ahmedknasr-dev.github.io/portfolio/#person"
+            },
+            "description": "Experienced Full Stack Developer specializing in Angular, TypeScript, and modern web technologies.",
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://ahmedknasr-dev.github.io/portfolio/#profilepage",
+            "mainEntity": {
+              "@id": "https://ahmedknasr-dev.github.io/portfolio/#person"
+            }
+          }
+        ]
       }
     </script>
   </head>
